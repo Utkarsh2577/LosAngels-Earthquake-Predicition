@@ -40,7 +40,9 @@ The main goal of this project is to answer:
 
 The dataset used in this project is the **Los Angeles Earthquake dataset**.
 
-The dataset contains earthquake-related features such as magnitude, depth, and other seismic attributes. The target variable represents earthquake class, ranging from **1 to 6**.
+The dataset contains earthquake-related features such as magnitude, depth-related measures, rolling earthquake activity, clustering coefficient, b-value, elapsed time, and coefficient of variation.
+
+The target variable represents earthquake class, ranging from **1 to 6**.
 
 The dataset initially contained missing values and irrelevant features. These were handled during the data preparation stage to improve model quality and reliability.
 
@@ -59,19 +61,22 @@ The dataset initially contained missing values and irrelevant features. These we
 
 ## Features Used
 
-The dataset contained earthquake-related features such as:
+The model used earthquake-related features such as:
 
-- Magnitude
-- Depth
-- Other seismic attributes related to earthquake events
-
-Some irrelevant features such as latitude, longitude, and other unnecessary columns were removed because they did not add useful value for the final classification objective.
+- `mag`
+- `clustering_coefficient_30_days`
+- `rolling_mean_depth_30_days`
+- `earthquakes_last_30_days`
+- `b_value`
+- `max_mag_last_week`
+- `elapsed_time`
+- `coefficient_of_variation`
 
 The target variable was:
 
-- Earthquake class
+- `class`
 
-The selected features were used to classify earthquake events into different categories.
+These features were used to classify earthquake events into different categories.
 
 ---
 
@@ -112,7 +117,9 @@ Earthquake classification can help in understanding seismic patterns and can sup
 
 The Los Angeles Earthquake dataset was explored to understand the available features, target variable, missing values, and overall structure.
 
-The dataset included earthquake-related variables such as magnitude, depth, and other seismic information. The target variable was earthquake class, ranging from **1 to 6**.
+The dataset included earthquake-related variables such as magnitude, rolling mean depth, earthquake activity in the last 30 days, b-value, elapsed time, and coefficient of variation.
+
+The target variable was earthquake class, ranging from **1 to 6**.
 
 Initial analysis showed that the dataset contained missing values and irrelevant columns that needed to be handled before model training.
 
@@ -130,8 +137,6 @@ This step included:
 - Performing correlation analysis
 - Splitting the dataset into training and testing sets
 - Applying feature scaling using StandardScaler
-
-Irrelevant features such as latitude and longitude were removed because they were not useful for the final classification objective.
 
 Missing values were handled using `dropna()` to ensure the model was trained on clean records.
 
@@ -156,41 +161,23 @@ The correlation matrix helped guide feature selection and improved understanding
 
 ## Visualizations
 
-Visualizations were added to make the project easier to understand and to clearly show the analysis and model performance.
+Visualizations were used to understand the relationship between earthquake-related features and to inspect the distribution of the selected variables before model training.
 
 ---
 
 ### Correlation Matrix Heatmap
 
-The correlation heatmap shows the relationship between earthquake features and the target class. It helped identify which features had stronger relationships with earthquake classification.
+The correlation matrix shows the relationship between earthquake features and the target class. It helped identify how variables such as magnitude, rolling mean depth, earthquakes in the last 30 days, elapsed time, and coefficient of variation relate to each other and to the earthquake class.
 
 ![Correlation Matrix Heatmap](images/correlation_matrix_heatmap.png)
 
 ---
 
-### Feature Distribution
+### Feature Distribution Plots
 
-The feature distribution plot shows the spread and behaviour of selected earthquake features. This helped understand the data before model training.
+The feature distribution plots show the spread of key earthquake-related features used in the model. These plots helped understand the behaviour of variables such as magnitude, clustering coefficient, rolling mean depth, number of earthquakes in the last 30 days, b-value, maximum magnitude last week, elapsed time, and coefficient of variation.
 
-![Feature Distribution](images/feature_distributions.png)
-
----
-
-### Random Forest Confusion Matrix
-
-The confusion matrix shows how well the Random Forest model classified earthquake events across different classes.
-
-![Random Forest Confusion Matrix](images/random_forest_confusion_matrix.png)
-
----
-
-### Model Accuracy Comparison
-
-This chart compares the performance of Random Forest and XGBoost.
-
-Random Forest achieved the highest accuracy with **96.2%**, while XGBoost achieved **90.8%**.
-
-![Model Accuracy Comparison](images/model_accuracy_comparison.png)
+![Feature Distribution Plots](images/feature_distributions.png)
 
 ---
 
@@ -306,9 +293,7 @@ Los-Angeles-Earthquake-Classification/
 │  
 ├── images/  
 │   ├── correlation_matrix_heatmap.png  
-│   ├── feature_distributions.png  
-│   ├── random_forest_confusion_matrix.png  
-│   └── model_accuracy_comparison.png  
+│   └── feature_distributions.png  
 │  
 ├── Los_Angeles.ipynb  
 ├── README.md  
