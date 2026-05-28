@@ -169,7 +169,8 @@ Visualizations were used to understand the relationship between earthquake-relat
 
 The correlation matrix shows the relationship between earthquake features and the target class. It helped identify how variables such as magnitude, rolling mean depth, earthquakes in the last 30 days, elapsed time, and coefficient of variation relate to each other and to the earthquake class.
 
-![Correlation Matrix Heatmap](images/correlation_matrix_heatmap.png)
+![image alt](<img width="1107" height="879" alt="image" src="https://github.com/user-attachments/assets/04f5e9a7-eeea-4c0a-81f2-10c6270bf353" />
+)
 
 ---
 
