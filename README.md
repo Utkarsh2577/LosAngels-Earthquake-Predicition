@@ -177,7 +177,7 @@ The correlation matrix shows the relationship between earthquake features and th
 
 The feature distribution plots show the spread of key earthquake-related features used in the model. These plots helped understand the behaviour of variables such as magnitude, clustering coefficient, rolling mean depth, number of earthquakes in the last 30 days, b-value, maximum magnitude last week, elapsed time, and coefficient of variation.
 
-![image alt] (https://github.com/Utkarsh2577/LosAngels-Earthquake-Predicition/blob/7354cd045c5543c31149d15f8ba13393f131443f/distribution%20image%202.png)
+![image alt] (https://github.com/Utkarsh2577/LosAngels-Earthquake-Predicition/blob/54301e4875824c18ecd4d5c54e2e3c9cbbba35dd/distribution%20image%202.png)
 
 ---
 
